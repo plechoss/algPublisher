@@ -22,7 +22,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/algPublisher/images/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="96x96" href="/algPublisher/images/favicon-96x96.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/algPublisher/images/favicon-16x16.png">
-  <link rel="manifest" href="/algPublisher/images/manifest.json">
+  <link rel="manifest" href="/algPublisher/manifest.json">
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="msapplication-TileImage" content="/algPublisher/images/ms-icon-144x144.png">
   <meta name="theme-color" content="#ffffff">
@@ -46,7 +46,7 @@
   <script>
   if (‘serviceWorker’ in navigator) {
     window.addEventListener(‘load’, function() {
-      navigator.serviceWorker.register(‘/sw.js’).then(
+      navigator.serviceWorker.register(‘/algPublisher/sw.js’).then(
         function(registration) {
           // Registration was successful
           console.log(‘ServiceWorker registration successful with scope: ‘, registration.scope); },
