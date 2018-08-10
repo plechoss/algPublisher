@@ -9,6 +9,15 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <script language="JavaScript">
+    function visualize() {
+      var content = ""
+      content += "<img src=\"http://cube.crider.co.uk/visualcube.php?fmt=svg&size=200&alg="
+      content += $("#algorithm").val()
+      content += "\" alt=\"\" class=\"center-responsive-img\">"
+      $("#cubeImage").html(content);
+    }
+  </script>
 </head>
 
 <body>
@@ -57,12 +66,12 @@
       </div>
     </div>
   </div>
-  <div class="col s12 m4 center">
+  <div class="col s12 m4 center" id="cubeImage">
     <img src="http://cube.crider.co.uk/visualcube.php?fmt=svg&size=200&alg=" alt="" class="center-responsive-img">
   </div>
     <div class="row">
     <div class="input-field col s6 offset-s3">
-      <input placeholder="Write your algorithm here" id="algorithm" type="text" class="validate">
+      <input placeholder="Write your algorithm here" id="algorithm" type="text" class="validate" onChange="visualize()">
     </div>
   </div>
   <div class="col s12 m4 center">
