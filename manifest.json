@@ -1,10 +1,12 @@
 {
-   "name": "Alg publisher",
-   "short_name": "algPub",
-   "lang": "en-US",
-   "start_url": "/",
-   "display": "standalone",
-   "theme_color": "#141414"
+   {
+  "name": "Alg publisher",
+  "short_name": "algPub",
+  "lang": "en-US",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#141414"
+}
  "icons": [
   {
    "src": "\/android-icon-36x36.png",
