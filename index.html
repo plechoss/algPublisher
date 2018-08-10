@@ -40,8 +40,26 @@
 
   <script language="JavaScript">
     function visualize() {
-      var url = "http://cube.crider.co.uk/visualcube.php?fmt=svg&size=200&case=" + $("#algorithm").val()
+      var url = "http://cube.crider.co.uk/visualcube.php?fmt=svg&size=200&case=" + $("#algorithm").val();
       $("#cubeImage").attr('src', url);
+    }
+  </script>
+  <script language="JavaScript">
+    function addAlg() {
+      var database = firebase.firestore();
+      var algorithm = $("#algorithm").val();
+      var img = "http://cube.crider.co.uk/visualcube.php?fmt=svg&size=200&case=" + algorithm;
+
+      database.collection("algs-ohf2l").add({
+          alg: algorithm,
+          image: img
+      })
+      .then(function(docRef) {
+          console.log("Document written with ID: ", docRef.id);
+      })
+      .catch(function(error) {
+          console.error("Error adding document: ", error);
+      });
     }
   </script>
 </head>
@@ -101,7 +119,7 @@
     </div>
   </div>
   <div class="col s12 m4 center">
-    <a class="waves-effect waves-light btn">publish</a>
+    <a class="waves-effect waves-light btn" onclick="addAlg()">publish</a>
   </div>
 
 <!--  <footer class="page-footer blue-grey lighten-4">
