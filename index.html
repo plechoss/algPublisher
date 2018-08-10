@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Alg publisher</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+
+<body>
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <h1 class="header center blue-grey-text text-darken-4">Alg publisher</h1>
+      <div class="row center">
+        <h5 class="header col s12 light">What's on your mind?</h5>
+      </div>
+    </div>
+  </div>
+  <div class="col s12 m4 center">
+    <img src="http://cube.crider.co.uk/visualcube.php?fmt=svg&size=200&alg=" alt="" class="center-responsive-img">
+  </div>
+    <div class="row">
+    <div class="input-field col s6 offset-s3">
+      <input placeholder="Write your algorithm here" id="algorithm" type="text" class="validate">
+    </div>
+  </div>
+  <div class="col s12 m4 center">
+    <a class="waves-effect waves-light btn">publish</a>
+  </div>
+
+<!--  <footer class="page-footer blue-grey lighten-4">
+      <div class="container">
+      <a class="blue-grey-text text-lighten-1">Made by</a> <a class="blue-grey-text text-darken-1" href="http://materializecss.com">Materialize</a>
+      </div>
+  </footer> -->
+
+
+  <!--  Scripts-->
+  <script src="https://www.gstatic.com/firebasejs/5.3.1/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyDs3rD_LiJJ4ywlIkT2GtyE7M6xn2Alc1s",
+      authDomain: "alg-website-252f3.firebaseapp.com",
+      databaseURL: "https://alg-website-252f3.firebaseio.com",
+      projectId: "alg-website-252f3",
+      storageBucket: "alg-website-252f3.appspot.com",
+      messagingSenderId: "484239364413"
+    };
+    firebase.initializeApp(config);
+  </script>
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.min.js"></script>
+  <script src="js/init.js"></script>
+
+  </body>
+</html>
