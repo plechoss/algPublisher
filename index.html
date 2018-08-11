@@ -44,40 +44,6 @@
       $("#cubeImage").attr('src', url);
     }
   </script>
-  <script language="JavaScript">
-    function addAlg() {
-      var database = firebase.firestore();
-      var algorithm = $("#algorithm").val();
-      var section = ''
-      switch ($("#section-selector").val()) {
-        case '1':
-          section = 'algs-ohf2l';
-          break;
-        case '2':
-          section = 'algs-multislotting';
-          break;
-        case '3':
-          section = 'algs-zbll';
-          break;
-        case '4':
-          section = 'algs-1lll';
-          break;
-        default:
-      }
-      var img = "http://cube.crider.co.uk/visualcube.php?fmt=svg&size=188&case=" + algorithm;
-
-      database.collection(section).add({
-          alg: algorithm,
-          image: img
-      })
-      .then(function(docRef) {
-          console.log("Document written with ID: ", docRef.id);
-      })
-      .catch(function(error) {
-          console.error("Error adding document: ", error);
-      });
-    }
-  </script>
 </head>
 
 <body>
@@ -127,8 +93,8 @@
     </div>
   </div>
   <div class="row">
-    <div class="input-field col s6 offset-s3" id="section-selector">
-      <select>
+    <div class="input-field col s6 offset-s3">
+      <select id="section-selector">
         <option value="" disabled selected>Choose the section</option>
         <option value="1">OH F2L</option>
         <option value="2">Multislotting</option>
@@ -184,6 +150,49 @@
           // registration failed :(
           console.log('ServiceWorker registration failed: ', err);
         });
+    });
+  }
+</script>
+<script language="JavaScript">
+  function addAlg() {
+    var database = firebase.firestore();
+    var algorithm = $("#algorithm").val();
+    var section = ''
+    console.log("jestesmy tutaj")
+    switch ($("#section-selector option:selected").val()) {
+      case '':
+        console.log('nothing chosen');
+        section = 'gowno';
+        break;
+      case '1':
+        section = 'algs-ohf2l';
+        console.log('algs-ohf2l recognized');
+        break;
+      case '2':
+        section = 'algs-multislotting';
+        console.log('algs-multislotting recognized');
+        break;
+      case '3':
+        section = 'algs-zbll';
+        console.log('algs-zbll recognized');
+        break;
+      case '4':
+        section = 'algs-1lll';
+        console.log('algs-1lll recognized');
+        break;
+      default:
+    }
+    var img = "http://cube.crider.co.uk/visualcube.php?fmt=svg&size=188&case=" + algorithm;
+    console.log("collection is " + section)
+    database.collection(section).add({
+        alg: algorithm,
+        image: img
+    })
+    .then(function(docRef) {
+        console.log("Document written with ID: ", docRef.id);
+    })
+    .catch(function(error) {
+        console.error("Error adding document: ", error);
     });
   }
 </script>
