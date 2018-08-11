@@ -48,9 +48,25 @@
     function addAlg() {
       var database = firebase.firestore();
       var algorithm = $("#algorithm").val();
-      var img = "http://cube.crider.co.uk/visualcube.php?fmt=svg&size=200&case=" + algorithm;
+      var section = ''
+      switch $("#section-selector").val() {
+        case '1':
+          section = 'algs-ohf2l';
+          break;
+        case '2':
+          section = 'algs-multislotting';
+          break;
+        case '3':
+          section = 'algs-zbll';
+          break;
+        case '4':
+          section = 'algs-1lll';
+          break;
+        default:
+      }
+      var img = "http://cube.crider.co.uk/visualcube.php?fmt=svg&size=188&case=" + algorithm;
 
-      database.collection("algs-ohf2l").add({
+      database.collection(section).add({
           alg: algorithm,
           image: img
       })
@@ -111,7 +127,7 @@
     </div>
   </div>
   <div class="row">
-    <div class="input-field col s6 offset-s3">
+    <div class="input-field col s6 offset-s3" id="section-selector">
       <select>
         <option value="" disabled selected>Choose the section</option>
         <option value="1">OH F2L</option>
