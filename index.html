@@ -40,7 +40,7 @@
 
   <script language="JavaScript">
     function visualize() {
-      var url = "http://cube.crider.co.uk/visualcube.php?fmt=svg&size=188&case=" + $("#algorithm").val();
+      var url = "http://cube.rider.biz/visualcube.php?fmt=svg&size=188&case=" + $("#algorithm").val();
       $("#cubeImage").attr('src', url);
     }
   </script>
@@ -104,7 +104,7 @@
     </div>
   </div>
   <div class="col s12 m4 center">
-    <img src="http://cube.crider.co.uk/visualcube.php?fmt=svg&size=188&alg=" alt="" class="center-responsive-img" id="cubeImage">
+    <img src="http://cube.rider.biz/visualcube.php?fmt=svg&size=188&alg=" alt="" class="center-responsive-img" id="cubeImage">
   </div>
   <div class="row">
     <div class="input-field col s6 offset-s3">
@@ -182,7 +182,7 @@
         break;
       default:
     }
-    var img = "http://cube.crider.co.uk/visualcube.php?fmt=svg&size=188&case=" + algorithm;
+    var img = "http://cube.rider.biz/visualcube.php?fmt=svg&size=188&case=" + algorithm;
     console.log("collection is " + section)
     database.collection(section).add({
         alg: algorithm,
